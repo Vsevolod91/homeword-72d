@@ -1,0 +1,364 @@
+.hide {
+  display: none;
+}
+
+.wrapper-post {
+  width: 100%;
+  height: 200px;
+  align-items: center;
+}
+
+.exmpl {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exmpl img {
+  min-width: 100%;
+  min-height: 100%;
+  flex-shrink: 0;
+}
+
+.bg-post-preview {
+  filter: brightness(50%);
+}
+
+.post-white-link {
+    color: #ffffff;
+    text-decoration: unset;
+}
+
+.post-white-link:hover {
+    color: #ffc107;
+}
+
+.dark-link {
+  color: black;
+  pointer-events: auto;
+  text-decoration: underline;
+}
+
+.dark-link:hover {
+  text-decoration: unset;
+}
+
+.form-imitation-popup-parent {
+  min-width: 100%;
+  justify-content: center;
+  display: flex;
+  height: 100%;
+  #background-color:rgb(58%, 53%, 22%, 0.5);
+}
+
+.form-imitation-popup {
+  bottom: 0;
+}
+
+.card-form-popup {
+  position: absolute;
+  z-index: 9;
+}
+
+a.update-mailing-profile {
+  color: black;
+  text-decoration: underline;
+}
+
+a.update-mailing-profile:hover {
+  text-decoration: unset;
+}
+
+a.update-mailing-detail {
+  color: black;
+  text-decoration: underline;
+  pointer-events: auto;
+}
+
+a.update-mailing-detail:hover {
+  text-decoration: unset;
+}
+
+a.update-mailing-detail-white {
+  color: white;
+  text-decoration: underline;
+}
+
+a.update-mailing-detail-white:hover {
+  text-decoration: unset;
+}
+
+.main-menu-desktop {
+    flex-grow: 1;
+}
+
+span.help-text {
+  font-size: small;
+  color: red;
+}
+
+.card-info {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 2px solid #f1f1f1;
+  z-index: 9;
+}
+
+.card-body-info-popup {
+  display: flex;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+}
+
+.card-header-form-popup {
+  display: flex;
+}
+
+.header-text-form-popup {
+  flex-grow: 1;
+}
+
+.close-header-form-popup {
+  margin-left: auto;
+}
+
+.icon-close-header-form-popup {
+  position: absolute;
+  top: 0;
+  right: 0
+}
+
+.card-info-popup {
+  position: absolute;
+  display: none;
+  max-width: 260px;
+}
+
+.td-table-info {
+  background-color: #cff4fc;
+}
+
+.td-table-danger {
+  background-color: #f8d7da;
+}
+
+.td-table-success {
+  background-color: #d1e7dd;
+}
+
+.icon-update-cron {
+  top: 0;
+  text-decoration: unset;
+  color: black;
+}
+
+.link-update-cron {
+  color: black;
+  text-decoration: underline;
+}
+
+.link-update-cron:hover {
+  text-decoration: unset;
+}
+
+.option-filter:hover {
+  background-color: #d1e7dd;
+  cursor: pointer;
+}
+
+.filter-letter {
+  position: absolute;
+  max-width: 200px;
+  display: none;
+  z-index: 9
+}
+
+.close-form {
+  cursor: pointer;
+}
+
+.filter-icon:hover {
+  cursor: pointer;
+}
+
+span.helptext {
+  font-size: small;
+  color: red;
+}
+
+.delete-form {
+ max-width: 350px;
+}
+
+.point-days-form {
+  max-width: 550px;
+}
+
+input::placeholder {
+  font-size: smaller;
+}
+
+.card-letter {
+  border-radius: 0;
+}
+
+.card-letter[title] {
+  pointer-events: none;
+}
+
+.username-card {
+ border-radius: 0;
+}
+
+.username-card[title] {
+ pointer-events: none;
+}
+
+.username-link-card {
+  pointer-events: auto;
+  color: black;
+  text-decoration: underline;
+}
+
+.username-link-card:hover {
+  text-decoration: unset;
+}
+
+a.update-ban-link {
+  pointer-events: auto;
+}
+
+button.filter-reset {
+  border-radius: 5px;
+}
+
+a.add-mobile {
+  width: 65px;
+  height: 60px;
+  border-radius: 30px;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
+
+.container-mailings {
+  min-height: 600px
+}
+
+.ban-form {
+  max-width: 450px;
+}
+
+.ban-form {
+  max-width: 450px;
+}
+
+.login-register-reset-form {
+  max-width: 400px;
+}
+
+.update-profile-form {
+  max-width: 450px;
+}
+
+.media-form {
+  max-width: 600px;
+}
+
+.mailing-form {
+  max-width: 400px;
+}
+
+ul.errorlist li  {
+  color: red;
+}
+
+.username-list-link-card {
+  pointer-events: auto;
+  color: black;
+  text-decoration: underline;
+}
+
+.username-list-link-card:hover {
+  text-decoration: unset;
+}
+
+img.info-register {
+  pointer-events: auto;
+}
+
+.user-comment-form {
+  max-width: 300px;
+}
+
+.bg-home-header {
+  filter: brightness(50%);
+}
+
+.home-text-overlay {
+  color: white;
+}
+
+.advantages-container {
+  min-width: 100%;
+}
+
+.wrapper-header-home-pc {
+  min-width: 100%;
+  max-height: 400px;
+  align-items: center;
+}
+
+.exmpl-header-home {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-header-home {
+  border-radius: 0;
+}
+
+.header-home {
+  min-width: 100%;
+}
+
+.mailing-list {
+  min-width: 100%;
+}
+
+.user-list {
+  min-width: 100%;
+}
+
+a.btn-register {
+  pointer-events: auto;
+}
+
+.icon-edit-profile {
+  cursor: pointer;
+}
+
+.menu-edit-profile {
+  max-width: 220px;
+  z-index: 9;
+  border-radius: 0;
+}
+
+.option-edit-menu-profile {
+  cursor: pointer;
+  color: black;
+  text-decoration: unset;
+}
+
+.option-edit-menu-profile:hover {
+  background-color: #d1e7dd;
+}
+
