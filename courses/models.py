@@ -14,6 +14,13 @@ class User(AbstractUser):
         (BANNED_FALSE, 'РАЗБЛОКИРОВАТЬ')
     )
 
+    AUTHOR = 'Автор'
+    CUSTOMER = 'Слушатель'
+    ROLES = (
+        (AUTHOR, 'Автор'),
+        (CUSTOMER, 'Слушатель')
+    )
+
     username = None
     email = models.EmailField(verbose_name='Почта', unique=True)
     phone = models.CharField(verbose_name='Телефон', max_length=20, **NULLABLE)
@@ -23,6 +30,7 @@ class User(AbstractUser):
     email_verify = models.BooleanField(default=False)
     banned = models.CharField(choices=BANNED_STATUSES, default=BANNED_FALSE, max_length=30, verbose_name='Забанить пользователя?')
     comment = models.CharField(verbose_name='Комментарий пользователю', **NULLABLE, max_length=100)
+    role = models.CharField(max_length=20, choices=ROLES, verbose_name='Роль')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -36,7 +44,7 @@ class User(AbstractUser):
 
 
 class Course(models.Model):
-    #user = models.ForeignKey('User', on_delete=models.CASCADE, verbose_name='Автор курса')
+    author = models.ForeignKey('User', on_delete=models.CASCADE, verbose_name='Автор курса')
     title = models.CharField(max_length=70, verbose_name='Название курса', db_index=True, unique=True)
     annotation = models.CharField(max_length=200, verbose_name='Аннотация')
     content = tinymce_models.HTMLField(verbose_name='Подробное описание', **NULLABLE)
@@ -51,9 +59,9 @@ class Course(models.Model):
 
 
 class Lesson(models.Model):
-    #user = models.ForeignKey('User', on_delete=models.CASCADE, verbose_name='Автор курса')
-    #course = models.ForeignKey('Course', on_delete=models.CASCADE, verbose_name='Курс урока')
-    title = models.CharField(max_length=70, verbose_name='Название курса', db_index=True, unique=True)
+    author = models.ForeignKey('User', on_delete=models.CASCADE, verbose_name='Автор курса')
+    course = models.ForeignKey('Course', on_delete=models.CASCADE, verbose_name='Курс урока')
+    title = models.CharField(max_length=70, verbose_name='Название курса', unique=False)
     annotation = models.CharField(max_length=200, verbose_name='Аннотация')
     content = tinymce_models.HTMLField(verbose_name='Подробное описание', **NULLABLE)
     picture = models.ImageField(verbose_name='Картинка', upload_to='picture_courses/', help_text='Рекомендуемый размер 2000*1000', **NULLABLE)
@@ -65,5 +73,21 @@ class Lesson(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+
+class Payment(models.Model):
+    CASH = 'Наличный расчет'
+    CASHLESS = 'Безналичный расчет'
+    TYPE_PAYMENTS = (
+        (CASH, 'Наличный расчет'),
+        (CASHLESS, 'Безналичный расчет')
+    )
+
+    customer = models.ForeignKey('User', on_delete=models.PROTECT)
+    course = models.ForeignKey('Course', on_delete=models.PROTECT)
+    lesson = models.ForeignKey('Lesson', on_delete=models.PROTECT, **NULLABLE)
+    date = models.DateTimeField(auto_now=True, verbose_name='Дата оплаты')
+    amount = models.SmallIntegerField(verbose_name='Сумма оплаты')
+    type = models.CharField(choices=TYPE_PAYMENTS, max_length=30)
 
 
