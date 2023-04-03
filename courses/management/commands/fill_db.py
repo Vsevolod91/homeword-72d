@@ -54,22 +54,42 @@ class Command(BaseCommand):
             {
                 'author': User.objects.all().get(id=1),
                 'course': Course.objects.all().get(id=1),
-                'title': 'Lesson', 'annotation': 'Hello World'
+                'title': 'Lesson1', 'annotation': 'Hello World1'
             },
             {
                 'author': User.objects.all().get(id=1),
                 'course': Course.objects.all().get(id=2),
-                'title': 'Lesson', 'annotation': 'Hello World'
+                'title': 'Lesson1', 'annotation': 'Hello World1'
             },
             {
                 'author': User.objects.all().get(id=2),
                 'course': Course.objects.all().get(id=3),
-                'title': 'Lesson', 'annotation': 'Hello World'
+                'title': 'Lesson1', 'annotation': 'Hello World1'
             },
             {
                 'author': User.objects.all().get(id=2),
                 'course': Course.objects.all().get(id=4),
-                'title': 'Lesson', 'annotation': 'Hello World'
+                'title': 'Lesson1', 'annotation': 'Hello World1'
+            },
+            {
+                'author': User.objects.all().get(id=1),
+                'course': Course.objects.all().get(id=1),
+                'title': 'Lesson2', 'annotation': 'Hello World2'
+            },
+            {
+                'author': User.objects.all().get(id=1),
+                'course': Course.objects.all().get(id=2),
+                'title': 'Lesson2', 'annotation': 'Hello World2'
+            },
+            {
+                'author': User.objects.all().get(id=2),
+                'course': Course.objects.all().get(id=3),
+                'title': 'Lesson2', 'annotation': 'Hello World2'
+            },
+            {
+                'author': User.objects.all().get(id=2),
+                'course': Course.objects.all().get(id=4),
+                'title': 'Lesson2', 'annotation': 'Hello World2'
             }
         ]
 

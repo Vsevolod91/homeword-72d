@@ -16,7 +16,7 @@ class LessonSerializer(serializers.ModelSerializer):
 
 
 class CourseSerializer(serializers.ModelSerializer):
-    lessons = LessonSerializer(source='title_set', many=True)
+    lessons = LessonSerializer(source='lesson_set', many=True)
 
     #lessons = serializers.SerializerMethodField('get_lessons')
 
